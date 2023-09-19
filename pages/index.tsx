@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Kbd } from "@chakra-ui/react";
+import { Code } from "@chakra-ui/react";
 import QuestionCard from "@/components/QuestionCard";
 export default function Home() {
   return (
@@ -11,7 +11,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <QuestionCard questions={"WHAT IS YOUR NAME"} category={""} callback={() => {}} questionNumber={10} totalQuestions={3} />
+        <QuestionCard
+          questions={"WHAT IS YOUR NAME"}
+          category={"GENERAL"}
+          callback={() => {}}
+          questionNumber={10}
+          totalQuestions={3}
+        />
       </main>
     </>
   );
