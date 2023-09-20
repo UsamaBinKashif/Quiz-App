@@ -1,6 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
-import { Code } from "@chakra-ui/react";
-import QuestionCard from "@/components/QuestionCard";
+import { Code, Skeleton } from "@chakra-ui/react";
 export default function Home() {
   return (
     <>
@@ -11,13 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <QuestionCard
-          questions={"WHAT IS YOUR NAME"}
-          category={"GENERAL"}
-          callback={() => {}}
-          questionNumber={10}
-          totalQuestions={3}
-        />
+        <Skeleton height={"100vh"}>
+          <div>contents wrapped</div>
+          <div>won't be visible</div>
+        </Skeleton>
       </main>
     </>
   );
