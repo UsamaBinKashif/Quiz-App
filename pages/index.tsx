@@ -1,7 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
+import { QuestionProps } from "@/ineterfaces";
+import { getQuestionList } from "@/lib/helper";
 import Head from "next/head";
-import { Code, Skeleton } from "@chakra-ui/react";
+import { totalQuestions, Difficulty } from "@/lib/constant";
+import { useState, useEffect } from "react";
+import Questioncard from "@/components/QuestionCard";
 export default function Home() {
+  const [questions, setQuestions] = useState<QuestionProps[]>([]);
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const questionsList = await getQuestionList(
+        totalQuestions,
+        Difficulty.HARD
+      );
+      setQuestions(questionsList);
+    };
+    fetchQuestions();
+  }, []);
   return (
     <>
       <Head>
@@ -11,10 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Skeleton height={"100vh"}>
-          <div>contents wrapped</div>
-          <div>won't be visible</div>
-        </Skeleton>
+        <Questioncard questions={""} category={""} callback={() => {}} />
       </main>
     </>
   );
