@@ -1,14 +1,14 @@
 import { ButtonProps } from "@/ineterfaces";
-import React from "react";
 import { Button } from "@chakra-ui/react";
-const AppButton: React.FC<ButtonProps> = ({
+
+const Appbutton: React.FC<ButtonProps> = ({
   value,
+  onClick,
   colorScheme,
   variant,
   className,
-  width,
   disabled,
-  onClick,
+  width,
 }) => {
   return (
     <>
@@ -26,4 +26,4 @@ const AppButton: React.FC<ButtonProps> = ({
   );
 };
 
-export default AppButton;
+export default Appbutton;

@@ -1,6 +1,7 @@
 import { QuestionCardProps } from "@/ineterfaces";
 import { Box, Flex, Spacer, Heading } from "@chakra-ui/react";
-import AppButton from "./AppButton";
+import Appbutton from "./Appbutton";
+
 
 const Questioncard: React.FC<QuestionCardProps> = ({
   questions,
@@ -11,37 +12,35 @@ const Questioncard: React.FC<QuestionCardProps> = ({
 }) => {
   return (
     <>
-      <Box bg="white" w="100%">
+      <Box bg="white" w="700px" h="280px">
         <Box mb={6} fontSize="md" fontWeight="bold" textTransform="uppercase">
           Your progress: {questionNumber}/{totalQuestions}
         </Box>
-        <Box fontSize="sm" mb={1}>
+        <Box fontSize="sm" mb={1}  textTransform="uppercase" color="purple.400" letterSpacing="2px">
           {category}
         </Box>
-        <Heading as="h1" size="lg">
-          <Box mb={6}>{questions}</Box>
+        <Heading as="h1" size="sm" w="100%" h="100px">
+          <Box mb={10}>{questions}</Box>
         </Heading>
 
-        <Flex direction="column">
-          <Box w="100%" mb={4}>
-            <AppButton
+        <Flex direction="column" alignItems="center">
+          <Box w="500px" mb={4}>
+            <Appbutton
               colorScheme="blue"
-              variant="solid"
+              variant="outline"
               onClick={callback}
               value="True"
               width="full"
-              className={""}
             />
           </Box>
           <Spacer />
-          <Box w="100%" mb={4}>
-            <AppButton
+          <Box w="500px" mb={4}>
+            <Appbutton
               colorScheme="red"
-              variant="solid"
+              variant="outline"
               onClick={callback}
               value="False"
               width="full"
-              className={""}
             />
           </Box>
         </Flex>

@@ -1,8 +1,8 @@
 export default interface QuestionProps {
-  questions: string;
-  category: string;
-  totalQuestions?: number;
-  questionNumber?: number;
-  correctAnswer: string;
-  callback: Function;
+    question: string;
+    category: string;
+    callback: Function;
+    totalQuestions: number;
+    questionNumber: number;
+    correct_answer: string;
 }
